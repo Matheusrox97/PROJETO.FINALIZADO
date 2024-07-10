@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gibson Menu</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: url(/Users/matheussmacbookpro/Downloads/Projeto.Final-main/gibson/background.png);
+        }
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #333;
+            /*padding: 10px 20px;*/
+        }
+        .navbar .logo img {
+            height: 80px;
+        }
+        .navbar ul {
+            list-style: none;
+            display: flex;
+            margin: 0;
+            padding: 0;
+        }
+        .navbar ul li {
+            position: relative;
+        }
+        .navbar ul li a {
+            color: white;
+            text-decoration: none;
+            padding: 14px 20px;
+            display: block;
+        }
+        .navbar ul li:hover a {
+            background-color: #555;
+        }
+        .navbar ul li ul {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background-color: #333;
+            padding: 0;
+            list-style: none;
+            min-width: 180px;
+        }
+        .navbar ul li:hover ul {
+            display: block;
+        }
+        .navbar ul li ul li a {
+            padding: 10px;
+        }
+        .menu-toggle {
+            display: none;
+        }
+        @media (max-width: 768px) {
+            .navbar ul {
+                display: none;
+                flex-direction: column;
+                width: 100%;
+            }
+            .navbar ul li {
+                text-align: center;
+            }
+            .navbar ul li ul {
+                position: static;
+            }
+            .navbar ul li ul li a {
+                padding: 10px 20px;
+            }
+            .menu-toggle {
+                display: block;
+                cursor: pointer;
+                color: white;
+                font-size: 24px;
+            }
+            .navbar ul.showing {
+                display: flex;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo">
+            <img src="gibson/logo.png" alt="Gibson Logo">
+        </div>
+        <div class="menu-toggle">&#9776;</div>
+        <ul>
+            <li><a href="index.html">HOME</a></li>
+            <li><a href="https://www.gibson.com/en-US/p/Electric-Guitar/USAQWF23/Vintage-Honey-Burst">GUITARRA</a></li>
+            <li><a href="https://www.gibson.com/en-US/p/Acoustic-Guitar/ACCFZN743/Antique-Natural">VIOLÃO</a></li>
+            <li><a href="https://www.gibson.com/en-US/p/Amp/Falcon-5-1x10-Combo/Cream-Bronco-Vinyl-with-Oxblood-Grille">AMPLI</a></li>
+            <li><a href="https://www.gibson.com/en-US/p/Capo/Hummingbird-Burst-Capo-Black-Chrome/B200-HBB-GIB">CAPOTRASTE</a></li>
+        </ul>
+    </nav>
+    <script>
+        document.querySelector('.menu-toggle').addEventListener('click', function() {
+            document.querySelector('.navbar ul').classList.toggle('showing');
+        });
+    </script>
+</body>
+</html>

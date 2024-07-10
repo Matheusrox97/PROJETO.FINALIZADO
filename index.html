@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ND.Son</title>
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+        font-family: sans-serif;
+        background-image: url("imagens/imagem_de_fundo.jpg");
+        background-size: cover;
+        background-position: center;
+      }
+
+      body::before {
+        content: "";
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.6);
+        z-index: -1;
+      }
+
+      header {
+        background-color: #333;
+        color: #fff;
+        padding: 0 0;
+      }
+
+      nav {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        max-width: 1200px;
+        margin: 0 auto;
+      }
+
+      .logo {
+        width: 100px;
+        height: 100px;
+      }
+
+      .menu {
+        display: flex;
+      }
+
+      ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        display: flex;
+      }
+
+      li {
+        margin-left: 20px;
+      }
+
+      a {
+        text-decoration: none;
+        color: #fff;
+      }
+
+      .menu-btn {
+        display: none;
+        background-color: #333;
+        color: #fff;
+        border: none;
+        font-size: 1.5em;
+        cursor: pointer;
+      }
+
+      .title {
+        text-align: center;
+        margin-top: 20px;
+      }
+
+      .texto {
+        align-items: center;
+        justify-content: end;
+        margin-top: 20px;
+        font-size: medium;
+        font-family: sans-serif;
+        padding: 5px;
+        margin-left: 100px;
+        margin-right: 100px;
+        background-color: #ffffffa3;
+      }
+
+      .title h1 {
+        font-size: 3em;
+        background-color: #ffffffa3;
+        margin-left: 100px;
+        margin-right: 100px;
+      }
+
+      .section-box {
+        width: 350px;
+        height: 175px;
+        margin-top: 1px;
+      }
+
+      .section-box img {
+        width: 350px;
+        height: 175px;
+      }
+
+      .content {
+        display: flex;
+        justify-content: space-around;
+        justify-content: center;
+        align-items: center;
+        margin-top: 50px;
+        margin: 5px;
+      }
+
+      .content-box {
+        width: 350px;
+        height: 350px;
+      }
+
+      .section {
+        width: 250px;
+        height: 350px;
+        border: 1px solid #ccc;
+        overflow: hidden;
+        margin: 5px;
+      }
+
+      .section img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      footer {
+        background-color: #333;
+        color: #fff;
+        padding: 5;
+        text-align: center;
+        margin-top: 180px;
+      }
+
+      /* dispositivos móveis */
+      @media (max-width: 600px) {
+        .logo {
+          width: 80px;
+          height: 80px;
+        }
+
+        .menu-btn {
+          display: block;
+        }
+
+        nav {
+          flex-direction: column;
+          align-items: flex-start;
+        }
+
+        .menu {
+          flex-direction: column;
+          display: none;
+          width: 100%;
+        }
+
+        ul {
+          flex-direction: column;
+          align-items: flex-start;
+          width: 100%;
+        }
+
+        li {
+          margin-left: 0;
+          margin-top: 10px;
+          width: 100%;
+        }
+
+        a {
+          padding: 10px;
+          width: 100%;
+          display: block;
+        }
+
+        .menu.show {
+          display: flex;
+        }
+
+        .title h1 {
+          font-size: 2em;
+          margin-left: 20px;
+          margin-right: 20px;
+        }
+
+        .texto {
+          margin-left: 20px;
+          margin-right: 20px;
+          font-size: small;
+        }
+
+        .section-box {
+          width: 100%;
+          height: auto;
+        }
+
+        .content {
+          flex-direction: column;
+        }
+
+        .section {
+          width: 100%;
+          height: auto;
+          margin: 5px 0;
+        }
+      }
+
+      /*tablets */
+      @media (max-width: 900px) {
+        .logo {
+          width: 90px;
+          height: 90px;
+        }
+
+        .menu-btn {
+          display: block;
+        }
+
+        nav {
+          flex-direction: column;
+          align-items: flex-start;
+        }
+
+        .menu {
+          flex-direction: column;
+          display: none;
+          width: 100%;
+        }
+
+        ul {
+          flex-direction: column;
+          align-items: flex-start;
+          width: 100%;
+        }
+
+        li {
+          margin-left: 0;
+          margin-top: 10px;
+          width: 100%;
+        }
+
+        a {
+          padding: 10px;
+          width: 100%;
+          display: block;
+        }
+
+        .menu.show {
+          display: flex;
+        }
+
+        .title h1 {
+          font-size: 2.5em;
+          margin-left: 50px;
+          margin-right: 50px;
+        }
+
+        .texto {
+          margin-left: 50px;
+          margin-right: 50px;
+          font-size: medium;
+        }
+
+        .section-box {
+          width: 100%;
+          height: auto;
+        }
+
+        .content {
+          flex-direction: column;
+        }
+
+        .section {
+          width: 100%;
+          height: auto;
+          margin: 5px 0;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <header>
+      <nav>
+        <img src="imagens/logo.jpg" alt="logo" class="logo"/>
+        <button class="menu-btn" onclick="toggleMenu()">☰</button>
+        <div class="menu">
+          <ul>
+            <li><a href="index.html">HOME</a></li>
+            <li><a href="gibson.html">GIBSON</a></li>
+            <li><a href="nord.html">NORD</a></li>
+            <li><a href="contatos.html">CONTATOS</a></li>
+          </ul>
+        </div>
+      </nav>
+    </header>
+
+    <main>
+      <div class="title">
+        <h1>A BELEZA ENTRE AS CORDAS E AS TECLAS</h1>
+      </div>
+      <div class="content">
+        <div class="content-box">
+          <div class="section-box">
+            <img src="imagens/homestudio-g.jpg" alt="home.studio">
+          </div>
+          <div class="section-box">
+            <img src="imagens/nord stage 4.jpg" alt="Teclado">
+          </div>
+        </div>
+        <div class="section">
+          <img src="imagens/guitarra preta.jpg" alt="Guitarra.1">
+        </div>
+        <div class="section">
+          <img src="imagens/guitarra laranja.jpg" alt="Guitarra.2">
+        </div>
+        <div class="section">
+          <img src="imagens/violao j200.jpg" alt="Violão">
+        </div>
+      </div>
+      <div class="texto">
+        <h1>Uma pequena demonstração daquilo que, hoje, fala muito</h1>
+        <h1>sobre quem está nos topos durante escolhas na hora da</h1>
+        <h1>aquisição de um novo instrumento, sendo um teclado ou uma</h1>
+        <h1>guitarra</h1>
+      </div>
+    </main>
+    <footer>
+      <p>Todos Direitos Reservados</p>
+    </footer>
+
+    <script>
+      function toggleMenu() {
+        var menu = document.querySelector('.menu');
+        menu.classList.toggle('show');
+      }
+    </script>
+  </body>
+</html>

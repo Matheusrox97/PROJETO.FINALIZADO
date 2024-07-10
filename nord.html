@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nord</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: url('/Users/matheussmacbookpro/Downloads/Projeto.Final-main/nord/background.jpg') no-repeat center center fixed;
+            background-size: cover;
+            color: #fff;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: #990000;
+            padding: 10px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        header img {
+            height: 50px;
+        }
+        nav {
+            position: relative;
+        }
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+        }
+        nav ul li {
+            margin: 0 15px;
+            position: relative;
+        }
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+        }
+        nav ul li ul {
+            display: none;
+            position: absolute;
+            background-color: #990000;
+            top: 100%;
+            left: 0;
+            min-width: 200px;
+            padding: 10px;
+        }
+        nav ul li:hover ul {
+            display: block;
+        }
+        nav ul li ul li {
+            margin: 0;
+            padding: 10px;
+        }
+        nav ul li ul li a {
+            color: #fff;
+            text-decoration: none;
+        }
+        .container {
+            display: flex;
+            padding: 20px;
+        }
+        .left-column {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .left-column img {
+            width: 80%;
+            margin-bottom: 20px;
+        }
+        .right-column {
+            flex: 1;
+            background-color: rgba(213, 0, 0, 0.8);
+            padding: 20px;
+            max-width: 400px;
+        }
+        .right-column h2 {
+            margin-top: 0;
+        }
+        .right-column ul {
+            list-style: none;
+            padding: 0;
+        }
+        .right-column ul li {
+            margin-bottom: 10px;
+        }
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #990000;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                flex-direction: column;
+                align-items: center;
+            }
+            .left-column, .right-column {
+                width: 80%;
+                max-width: 80%;
+            }
+            nav ul {
+                flex-direction: column;
+                display: none;
+            }
+            nav ul.show {
+                display: flex;
+            }
+            nav ul li {
+                margin: 10px 0;
+            }
+            .menu-toggle {
+                display: block;
+                cursor: pointer;
+                color: #fff;
+                font-size: 24px;
+            }
+        }
+        @media (min-width: 769px) {
+            .menu-toggle {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <img src="nord/logo.png" alt="Nord Logo">
+        <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+        <nav>
+            <ul id="menu">
+                <li><a href="index.html">HOME</a>
+                </li>
+                <li><a href="https://www.nordkeyboards.com/products/nord-grand-2/">NORD GRAND 2</a>
+                    <ul>
+                        <li><a href="#">Conheça mais sobre a segunda geração da linha Stage</a></li>
+                    </ul>
+                </li>
+                <li><a href="https://www.nordkeyboards.com/products/nord-stage-4/">NORD STAGE 4</a>
+                    <ul>
+                        <li><a href="#">Conheça mais sobre o ultimo lançamento da linha Stage</a></li>
+                    </ul>
+                </li>
+                <li><a href="https://www.nordkeyboards.com/products/nord-piano-5/">NORD PIANO 5</a>
+                    <ul>
+                        <li><a href="#">O piano portátil do seus sonhos</a></li>
+                    </ul>
+                </li>
+                <li><a href="https://www.nordkeyboards.com/products/nord-electro-6/">NORD ELECTRO 6</a>
+                    <ul>
+                        <li><a href="#">Tenha o melhor dos pianos elétricos e Órgãos</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <div class="container">
+        <div class="left-column">
+            <img src="nord/modulo.jpg" alt="Modulo Stage">
+            <img src="nord/stage4.png" alt="Nord Stage">
+        </div>
+        <div class="right-column">
+            <h2>ESPECIFICAÇÕES</h2>
+            <ul>
+                <li>MASTER LEVEL CONTROL</li>
+                <li>WOODEN PITCH STICK</li>
+                <li>MODULATION WHEEL</li>
+                <li>512 PROGRAMS - 8 BANKS WITH 8 PAGES EACH. EACH PAGE HAS 8 PROGRAM LOCATIONS</li>
+                <li>PRESET LIBRARY WITH ORGAN, PIANO AND SYNTH PRESETS INCLUDING EFFECTS. 2X64 ORGAN PRESET LOCATIONS, 2X64 PIANO PRESET LOCATIONS, 8X64 SYNTH PRESET LOCATIONS.</li>
+                <li>8 LIVE PROGRAMS</li>
+                <li>2 INDIVIDUAL LAYER SCENE SETUPS</li>
+                <li>3 MORPH SOURCES: MODULATION WHEEL (ALSO CONTROLLABLE BY SWELL PEDAL), CONTROL PEDAL, AFTERTOUCH</li>
+                <li>STEREO AND MONO OUTPUT ROUTING OPTIONS</li>
+                <li>PROGRAMMABLE TRANSPOSE +/- 6 SEMITONES</li>
+                <li>MASTER CLOCK FUNCTIONALITY WITH MANUAL, EXTERNAL AND TAP-TEMPO RATE CONTROL</li>
+                <li>INTERNAL AND MIDI CLOCK SOURCE</li>
+                <li>MIDI OVER USB FUNCTIONALITY</li>
+                <li>LEVEL CONTROL</li>
+                <li>AFTERTOUCH</li>
+                <li>UP TO 3 SPLIT POINTS (4 KEYBOARD ZONES) WITH VISUAL LED INDICATION BETWEEN ZONES</li>
+                <li>3 SPLIT POINT WIDTH (CROSSFADE) OPTIONS: LRG, SML OR OFF</li>
+            </ul>
+        </div>
+    </div>
+    <footer>
+        TODOS OS DIREITOS RESERVADOS
+    </footer>
+
+    <script>
+        function toggleMenu() {
+            const menu = document.getElementById('menu');
+            menu.classList.toggle('show');
+        }
+    </script>
+</body>
+</html>

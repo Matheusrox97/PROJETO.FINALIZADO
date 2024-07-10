@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contatos</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: url(/Users/matheussmacbookpro/Downloads/Projeto.Final-main/contatos/background.png) no-repeat center center fixed;
+            background-size: cover;
+        }
+        header {
+            background-color: rgba(255, 255, 255, 0.8);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px;
+        }
+        .menu-toggle {
+            display: none;
+        }
+        nav {
+            display: flex;
+            gap: 20px;
+        }
+        nav a {
+            text-decoration: none;
+            color: #000;
+            font-weight: bold;
+        }
+        .contact-box {
+            background-color: rgba(255, 255, 255, 0.9);
+            border-radius: 10px;
+            padding: 20px;
+            margin: 50px auto;
+            width: 80%;
+            max-width: 500px;
+            text-align: center;
+            backdrop-filter: blur(10px);
+        }
+        .contact-box h1 {
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+        .contact-box p {
+            font-size: 18px;
+            margin: 10px 0;
+        }
+        @media (max-width: 768px) {
+            nav {
+                display: none;
+                flex-direction: column;
+                background-color: rgba(255, 255, 255, 0.9);
+                position: absolute;
+                top: 60px;
+                right: 20px;
+                width: 200px;
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            }
+            nav a {
+                padding: 10px;
+                border-bottom: 1px solid #ddd;
+            }
+            nav a:last-child {
+                border-bottom: none;
+            }
+            .menu-toggle {
+                display: block;
+                cursor: pointer;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="gibson.html">Gibson</a>
+            <a href="nord.html">Nord</a>
+            <a href="contatos.html">Contatos</a>
+        </nav>
+    </header>
+    <div class="contact-box">
+        <h1>CONTATOS</h1>
+        <p>📞 (21) 99181-1845</p>
+        <p>📞 (21) 3770-0261</p>
+        <p>📧 MATHEUSROX.MR@GMAIL.COM</p>
+    </div>
+
+    <script>
+        function toggleMenu() {
+            const nav = document.querySelector('nav');
+            nav.style.display = nav.style.display === 'flex' ? 'none' : 'flex';
+        }
+    </script>
+</body>
+</html>
